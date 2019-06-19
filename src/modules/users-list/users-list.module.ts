@@ -6,10 +6,14 @@ import { UsersResolver } from './resolvers';
 import { PaginationResolver } from './resolvers/pagination.resolver';
 
 import { UsersListRoutingModule } from './users-list-routing.module';
+import { UsersShellComponent } from './containers/users-shell.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 
 @NgModule({
-  declarations: [UsersListComponent],
+  declarations: [
+    UsersShellComponent,
+    UsersListComponent,
+  ],
   imports: [
     CommonModule,
     CoreModule.forRoot(),

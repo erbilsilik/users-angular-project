@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UsersListComponent } from './components/users-list/users-list.component';
 import { UsersResolver } from './resolvers';
 import { PaginationResolver } from './resolvers/pagination.resolver';
+import { UsersShellComponent } from './containers/users-shell.component';
 
 const routes: Routes = [
   {
@@ -11,13 +11,17 @@ const routes: Routes = [
       users: UsersResolver,
       paginationInfo: PaginationResolver
     },
-    component: UsersListComponent
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
+    component: UsersShellComponent
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [PaginationResolver, UsersResolver]
+  providers: [
+    PaginationResolver,
+    UsersResolver,
+  ]
 })
 export class UsersListRoutingModule { }

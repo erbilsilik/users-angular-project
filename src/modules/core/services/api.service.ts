@@ -12,7 +12,9 @@ export class ApiService {
   }
 
   fetchUsers(page): Observable<any> {
-    return this.http.get('https://reqres.in/api/users?page=' + page).pipe(map(response => response.json().data));
+    return this.http.get('https://reqres.in/api/users?page=' + page).pipe(
+      map(response => response.json().data)
+    );
   }
 
   fetchPaginationInfo(): Observable<any> {

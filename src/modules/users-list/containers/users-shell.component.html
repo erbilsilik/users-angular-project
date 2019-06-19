@@ -1,0 +1,7 @@
+<app-users-list
+  [userList]="userList$ | async"
+  [paginationInfo]="paginationInfo$ | async"
+  (userSelected)="userSelected($event)"
+  (pageChanged)="pageChanged($event)"
+>
+</app-users-list>
