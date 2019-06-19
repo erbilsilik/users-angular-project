@@ -1,15 +1,26 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { UserRoutingModule } from './user-routing.module';
-import { UserComponent } from './components/user/user.component';
-import { UserDataComponent } from './components/user-data/user-data.component';
+import {UserRoutingModule} from './user-routing.module';
+import {UserComponent} from './components/user/user.component';
+import {UserShellComponent} from './containers/user-shell/user-shell.component';
+import {MatButtonModule, MatCardModule} from '@angular/material';
+import {UserResolver} from './resolvers/user.resolver';
 
 @NgModule({
-  declarations: [UserComponent, UserDataComponent],
+  declarations: [
+    UserComponent,
+    UserShellComponent
+  ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    MatCardModule,
+    MatButtonModule
+  ],
+  providers: [
+    UserResolver
   ]
 })
-export class UserModule { }
+export class UserModule {
+}

@@ -12,11 +12,12 @@ const routes: Routes = [
       paginationInfo: PaginationResolver
     },
     component: UsersListComponent
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [PaginationResolver, UsersResolver]
 })
 export class UsersListRoutingModule { }

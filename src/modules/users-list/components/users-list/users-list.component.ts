@@ -3,7 +3,6 @@ import { PageEvent } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { UserInterface } from '../../../../interfaces';
-import { ApiService } from '../../../core/services';
 
 @Component({
   selector: 'app-users-list',
@@ -33,11 +32,11 @@ export class UsersListComponent implements OnInit {
     )
       .subscribe(paginationInfo => {
         this.pagesCount = paginationInfo.total;
-      })
+      });
   }
 
   pageChanged(event: PageEvent): void {
-    let page: number = event.pageIndex + 1;
+    const page: number = event.pageIndex + 1;
     this.router.navigate(['./'], { queryParams: { page } });
   }
 

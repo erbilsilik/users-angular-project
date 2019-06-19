@@ -1,3 +1,9 @@
-<button (click)="back()">Back</button>
+<button mat-button (click)="back.emit()">Back</button>
 
-<app-user-data [user]="user"></app-user-data>
+<mat-card class = "tp-card">
+  <mat-card-header>
+    <mat-card-title>{{user.first_name}} {{user.last_name}}</mat-card-title>
+    <mat-card-subtitle>{{user.email}}s</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src] = "user.avatar" style="width: 100px; height: 100px; padding-left: 30px">
+</mat-card>
